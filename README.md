@@ -10,4 +10,11 @@ pinned: false
 license: cc-by-nc-nd-4.0
 ---
 
+#Running locally:
+clone repository
+```pip install gradio````
+
+run app.py
+```python app.py````
+
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference

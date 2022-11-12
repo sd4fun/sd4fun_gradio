@@ -4,7 +4,7 @@ import requests
 url = "https://api.newnative.ai/stable-diffusion?prompt="
 
 def run(gender, ethnicity, skin_color, hair_length, hair_color, eye_color, piercings):
-    prompt = f"""mugshot, {ethnicity} {skin_color} {gender} with {hair_length} {hair_color} hair, {eye_color} eyes, {" piercing, ".join([*piercings, ""]) if piercings else ""}"""
+    prompt = f"""mugshot portrait, {ethnicity} {skin_color} {gender} with {hair_length} {hair_color} hair, {eye_color} eyes, {" piercing, ".join([*piercings, ""]) if piercings else ""}"""
     # return f"""The {quantity} {animal}s went to the {place} where they {" and ".join(activity_list)} until the {"morning" if morning else "night"}"""
     return getImage(prompt)
 
