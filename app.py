@@ -6,11 +6,12 @@ def sentence_builder(quantity, animal, place, activity_list, morning):
 demo = gr.Interface(
     sentence_builder,
     [
-        gr.Radio(["park", "zoo", "road"], label="Gender" ),
+        gr.Radio(["Male", "Female", "unknown"], label="Gender" ),
         gr.Dropdown(["South Asian, North Asian, White, African American, African, American Indian, Hispanic"], label="Ethnicity"),
         gr.Dropdown(["Black", "Brown", "Yellow", "Peach","Tan","Beige", "White", "Grey"], label="Skin color" ),
         gr.Dropdown(["Black","Dark brown", "Light", "brown", "Blonde", "Red", "Grey", "Blue", "Pink"], label="Hair color" ),
         gr.Dropdown(["Black", "Dark Brown", "Light Brown", "Green", "Blue", "Hazel", "Amber", "Red", "Pink"], label="Eye color" ),
+        gr.Dropdown(["], label="Eye color" ),
         gr.CheckboxGroup(["Nose", "Ear", "Eyebrow", "Tongue", "Lips", "Cheeks"], label="Piercings"),
         gr.Checkbox(label="Is it the morning?"),
     ],
