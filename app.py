@@ -2,7 +2,7 @@ import gradio as gr
 
 def sentence_builder(gender, ethnicity, skin_color, hair_length, hair_color, eye_color, piercings, ):
     return f"""{ethnicity} {skin_color} {gender} with {hair_length} {hair_color} hair, {eye_color} eyes"""
-    return f"""The {quantity} {animal}s went to the {place} where they {" and ".join(activity_list)} until the {"morning" if morning else "night"}"""
+    # return f"""The {quantity} {animal}s went to the {place} where they {" and ".join(activity_list)} until the {"morning" if morning else "night"}"""
 
 demo = gr.Interface(
     sentence_builder,
