@@ -4,10 +4,10 @@ import requests
 url = "https://api.newnative.ai/stable-diffusion?prompt="
 
 def run(gender, height, weight, age, ethnicity, skin_color, hair_length, hair_color, eye_color, facial_hair, facial_hair_color):
-    prompt = f"""mugshot portrait, {age + " " if age else ""}{skin_color} {ethnicity} {gender}{" with " + hair_length if hair_length else ""} {hair_color + " hair, " if hair_length and hair_color else ""}{eye_color + " eyes, " if eye_color else ""}{facial_hair_color + " " if facial_hair and facial_hair_color else ""}{facial_hair+ ", " if facial_hair else ""}{getHeightInFeet(height) + " tall, " if height else ""}{getWeightInPounds(weight)}"""
+    prompt = f"""mugshot portrait, {age + " " if age else ""}{skin_color} {ethnicity} {gender}{" with " + hair_length if hair_length else ""} {hair_color + " hair, " if hair_length and hair_color else ""}{eye_color + " eyes, " if eye_color else ""}{facial_hair_color + " " if facial_hair and facial_hair_color else ""}{facial_hair+ ", " if facial_hair else ""}{getHeightInFeet(height) + " tall, " if height else ""}{getWeightInPounds(weight)}, canon EOS"""
     
     print (prompt)
-    return getImage(prompt)
+    return getImage(prompt.lower())
 
 def getHeightInFeet(height):
     feet = height*0.0328084
