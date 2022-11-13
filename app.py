@@ -32,7 +32,7 @@ demo = gr.Interface(
         gr.Slider(100,250,value=160, label="Height (cm)"), #Height
         gr.Slider(40,250,value=50, label="Weight (kg)"), #Weight
         gr.Radio(["Young", "Adult", "Middle-aged", "Old"], label="Age" ), #Age
-        gr.Dropdown(sorted(["South Asian", "North Asian", "White", "African American", "American Indian", "Hispanic", "Latin"]), label="Ethnicity"), #Ethnicity
+        gr.Dropdown(sorted(["South Asian", "North Asian", "White", "African American", "American Indian", "Hispanic", "Latin"]), label="Race"), #Race
         gr.Dropdown(sorted(["Black", "Brown", "Yellow", "Peach","Tan","Beige", "White", "Grey"]), label="Skin color" ), #Skin color
         gr.Radio(sorted(["Short", "Long", "Bald", "Medium"]), label="Hair length" ), #Hair length
         gr.Dropdown(sorted(["Black","Dark brown", "Light brown", "Blond", "Red", "Grey"]), label="Hair color" ), #Hair color
