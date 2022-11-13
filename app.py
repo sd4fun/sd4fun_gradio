@@ -25,8 +25,8 @@ def getImage(prompt):
     return(data["image_url"])
 
 demo = gr.Interface(
-    run,
-    [
+    fn = run,
+    inputs = [
         gr.Radio(["Male", "Female"], label="Gender" ),  #Gender
         gr.Slider(100,250,value=160, label="Height (cm)"), #Height
         gr.Slider(40,250,value=50, label="Weight (kg)"), #Weight
@@ -41,7 +41,9 @@ demo = gr.Interface(
         # gr.CheckboxGroup(["Nose", "Ear", "Eyebrow", "Lips", "Cheeks"], label="Piercings"),
         #gr.Checkbox(label="Is it the morning?"),
     ],
-    "image",
+    outputs = "image",
+    title = "AI Portrait Generator",
+    description = "Generate a portrait of a person with the given attributes",
     # examples=[
     #     [2, "cat", "park", ["ran", "swam"], True],
     #     [4, "dog", "zoo", ["ate", "swam"], False],
