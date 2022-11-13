@@ -4,10 +4,8 @@ import requests
 url = "https://api.newnative.ai/stable-diffusion?prompt="
 
 def run(gender, height, weight, age, ethnicity, skin_color, hair_length, hair_color, eye_color, facial_hair, facial_hair_color):
-    prompt = f"""mugshot portrait, {ethnicity} {skin_color} {gender} with {hair_length} {hair_color} hair, {eye_color} eyes, {facial_hair} {facial_hair_color} facial hair, {age} years old, {getHeightInFeet(height)} tall, {getWeightInPounds(weight)}"""
+    prompt = f"""mugshot portrait, {skin_color} {ethnicity} {gender}{" with " + hair_length if hair_length else ""} {hair_color + " hair, " if hair_length and hair_color else ""}{eye_color + " eyes, " if eye_color else ""}{facial_hair_color + " " if facial_hair and facial_hair_color else ""}{facial_hair+ ", " if facial_hair else ""}{age + ", " if age else ""}{getHeightInFeet(height) + " tall, " if height else ""}{getWeightInPounds(weight)}"""
     
-    # prompt = f"""mugshot portrait, {ethnicity} {skin_color} {gender} with {hair_length} {hair_color} hair, {eye_color} eyes, {" piercing, ".join([*piercings, ""]) if piercings else ""}"""
-    # return f"""The {quantity} {animal}s went to the {place} where they {" and ".join(activity_list)} until the {"morning" if morning else "night"}"""
     print (prompt)
     return getImage(prompt)
 
@@ -31,7 +29,7 @@ demo = gr.Interface(
         gr.Slider(100,250,value=160, label="Height (cm)"), #Height
         gr.Slider(40,250,value=50, label="Weight (kg)"), #Weight
         gr.Radio(sorted(["Young", "Adult", "Middle-aged", "Old"]), label="Age" ), #Age
-        gr.Dropdown(sorted(["South Asian", "North Asian", "White", "African American", "African", "American Indian", "Hispanic"]), label="Ethnicity"), #Ethnicity
+        gr.Dropdown(sorted(["South Asian", "North Asian", "White", "African American", "American Indian", "Hispanic"]), label="Ethnicity"), #Ethnicity
         gr.Dropdown(sorted(["Black", "Brown", "Yellow", "Peach","Tan","Beige", "White", "Grey"]), label="Skin color" ), #Skin color
         gr.Radio(sorted(["Short", "Long", "Bald", "Medium"]), label="Hair length" ), #Hair length
         gr.Dropdown(sorted(["Black","Dark brown", "Light brown", "Blonde", "Red", "Grey"]), label="Hair color" ), #Hair color

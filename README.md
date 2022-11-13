@@ -1,5 +1,5 @@
 ---
-title: Test Space
+title: Portrait Generator
 emoji: 🌍
 colorFrom: purple
 colorTo: green
@@ -21,6 +21,10 @@ run app.py
 python app.py
 ```
 
-open 
+open
+```
+http://127.0.0.1:7860
+```
+
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
