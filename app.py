@@ -24,15 +24,15 @@ def getImage(prompt):
 
 demo = gr.Interface(
     fn = run,
-    article = "<p>For better accuracy, please enter the following information about the person you want to generate a portrait for.</p><h3>Biases and content acknowledgment</h3><p>Beware to the fact that this is a pre-trained model that may output content that reinforces or exacerbates societal biases, as well as realistic faces, pornography and violence. The model was trained on the LAION-5B dataset, which scraped non-curated image-text-pairs from the internet (the exception being the removal of illegal content) and is meant for research purposes.</p><p>You can read more in the model card <a href=\"https://huggingface.co/CompVis/stable-diffusion-v1-4\" target=\"_blank\">HERE.</a></p>"
+    article = "<p>For better accuracy, please enter all the information about the person you want to generate a portrait for.</p><h3>Biases and content acknowledgment</h3><p>Beware to the fact that this is a pre-trained model that may output content that reinforces or exacerbates societal biases, as well as realistic faces, pornography and violence. The model was trained on the LAION-5B dataset, which scraped non-curated image-text-pairs from the internet (the exception being the removal of illegal content) and is meant for research purposes.</p><p>You can read more in the model card <a href=\"https://huggingface.co/CompVis/stable-diffusion-v1-4\" target=\"_blank\">HERE.</a></p>"
         ,
     inputs = [
         
         gr.Radio(["Male", "Female"], label="Gender" ),  #Gender
         gr.Slider(100,250,value=160, label="Height (cm)"), #Height
         gr.Slider(40,250,value=50, label="Weight (kg)"), #Weight
-        gr.Radio(sorted(["Young", "Adult", "Middle-aged", "Old"]), label="Age" ), #Age
-        gr.Dropdown(sorted(["South Asian", "North Asian", "White", "African American", "American Indian", "Hispanic"]), label="Ethnicity"), #Ethnicity
+        gr.Radio(["Young", "Adult", "Middle-aged", "Old"], label="Age" ), #Age
+        gr.Dropdown(sorted(["South Asian", "North Asian", "White", "African American", "American Indian", "Hispanic", "Latin"]), label="Ethnicity"), #Ethnicity
         gr.Dropdown(sorted(["Black", "Brown", "Yellow", "Peach","Tan","Beige", "White", "Grey"]), label="Skin color" ), #Skin color
         gr.Radio(sorted(["Short", "Long", "Bald", "Medium"]), label="Hair length" ), #Hair length
         gr.Dropdown(sorted(["Black","Dark brown", "Light brown", "Blond", "Red", "Grey"]), label="Hair color" ), #Hair color
